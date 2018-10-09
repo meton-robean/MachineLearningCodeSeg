@@ -59,9 +59,10 @@ ax.add_patch(circle)
 
 #求分割平面
 w=svmMLiA.calcWs(alphas, dataArr, labelArr)  #求w
-w0=w[0], w1=w[1]
-x = arange(-2.0, 12.0, 0.1)
-y = (-w0*x - b)/w1  #超平面
-ax.plot(x,y)
-ax.axis([-2,12,-8,6])
-plt.show()
+print 'w: ', w
+# w0=w[0], w1=w[1]
+# x = arange(-2.0, 12.0, 0.1)
+# y = (-w0*x - b)/w1  #超平面
+# ax.plot(x,y)
+# ax.axis([-2,12,-8,6])
+# plt.show()

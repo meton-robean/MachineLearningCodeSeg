@@ -77,8 +77,8 @@ def kernelTrans(X, A, kTup): #calc the kernel or transform data to a higher dime
     elif kTup[0]=='rbf':
         for j in range(m):
             deltaRow = X[j,:] - A
-            K[j] = deltaRow*deltaRow.T
-        K = exp(K/(-1*kTup[1]**2)) #divide in NumPy is element-wise not matrix like Matlab
+            K[j] = deltaRow*deltaRow.T  #距离
+        K = exp(K/(-1*kTup[1]**2)) #divide in NumPy is element-wise not matrix like Matlab  # K是一个向量
     else: raise NameError('Houston We Have a Problem -- \
     That Kernel is not recognized')
     return K
@@ -187,7 +187,7 @@ def testRbf(k1=1.3):
     datMat=mat(dataArr); labelMat = mat(labelArr).transpose()
     svInd=nonzero(alphas.A>0)[0]
     sVs=datMat[svInd] #get matrix of only support vectors
-    labelSV = labelMat[svInd];
+    labelSV = labelMat[svInd]
     print "there are %d Support Vectors" % shape(sVs)[0]
     m,n = shape(datMat)
     errorCount = 0
@@ -195,7 +195,7 @@ def testRbf(k1=1.3):
         kernelEval = kernelTrans(sVs,datMat[i,:],('rbf', k1))
         predict=kernelEval.T * multiply(labelSV,alphas[svInd]) + b
         if sign(predict)!=sign(labelArr[i]): errorCount += 1
-    print "the training error rate is: %f" % (float(errorCount)/m)
+    print "the training error rate is: %f" % (float(errorCount)/m)   #训练集
     dataArr,labelArr = loadDataSet('testSetRBF2.txt')
     errorCount = 0
     datMat=mat(dataArr); labelMat = mat(labelArr).transpose()
@@ -215,7 +215,7 @@ def img2vector(filename):
             returnVect[0,32*i+j] = int(lineStr[j])
     return returnVect
 
-def loadImages(dirName):
+def loadImages(dirName):  #导入手写数据
     from os import listdir
     hwLabels = []
     trainingFileList = listdir(dirName)           #load the training set
@@ -224,28 +224,28 @@ def loadImages(dirName):
     for i in range(m):
         fileNameStr = trainingFileList[i]
         fileStr = fileNameStr.split('.')[0]     #take off .txt
-        classNumStr = int(fileStr.split('_')[0])
-        if classNumStr == 9: hwLabels.append(-1)
+        classNumStr = int(fileStr.split('_')[0])    #制作标签
+        if classNumStr == 9: hwLabels.append(-1)   #做成二分类来测试
         else: hwLabels.append(1)
-        trainingMat[i,:] = img2vector('%s/%s' % (dirName, fileNameStr))
+        trainingMat[i,:] = img2vector('%s/%s' % (dirName, fileNameStr))  #制作样本数据（手写图片转成向量）
     return trainingMat, hwLabels    
 
-def testDigits(kTup=('rbf', 10)):
+def testDigits(kTup=('rbf', 10)):  #结合SMO与核技巧分类手写数据集
     dataArr,labelArr = loadImages('./digits/trainingDigits')
     b,alphas = smoP(dataArr, labelArr, 200, 0.0001, 10000, kTup)
     datMat=mat(dataArr); labelMat = mat(labelArr).transpose()
     svInd=nonzero(alphas.A>0)[0]
     sVs=datMat[svInd] 
-    labelSV = labelMat[svInd];
+    labelSV = labelMat[svInd]
     print "there are %d Support Vectors" % shape(sVs)[0]
     m,n = shape(datMat)
     errorCount = 0
     for i in range(m):
         kernelEval = kernelTrans(sVs,datMat[i,:],kTup)
-        predict=kernelEval.T * multiply(labelSV,alphas[svInd]) + b
+        predict=kernelEval.T * multiply(labelSV,alphas[svInd]) + b   #预测时候只需要用到支持向量
         if sign(predict)!=sign(labelArr[i]): errorCount += 1
     print "the training error rate is: %f" % (float(errorCount)/m)
-    dataArr,labelArr = loadImages('testDigits')
+    dataArr,labelArr = loadImages('./digits/testDigits')
     errorCount = 0
     datMat=mat(dataArr); labelMat = mat(labelArr).transpose()
     m,n = shape(datMat)
