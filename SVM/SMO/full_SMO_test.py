@@ -35,7 +35,7 @@ def calcEk(oS, k):  #计算误差
     Ek = fXk - float(oS.labelMat[k])
     return Ek
 
-def clipAlpha(aj,H,L):
+def clipAlpha(aj,H,L):#边界值裁剪
     if aj > H:
         aj = H
     if L > aj:
@@ -56,7 +56,7 @@ def selectJ(i, oS, Ei):  # this is the second choice -heurstic, and calcs Ej
     maxDeltaE = 0
     Ej = 0
     oS.eCache[i] = [1, Ei]  # set valid #choose the alpha that gives the maximum delta E
-    validEcacheList = nonzero(oS.eCache[:, 0].A)[0]   #.A 代表将 矩阵转化为array数组类型,  nonzero函数返回索引数组
+    validEcacheList = nonzero(oS.eCache[:, 0].A)[0]   #.A 代表将 矩阵转化为array数组类型,  nonzero函数返回索引数组：返回非零E值对应的alpha下标
     if (len(validEcacheList)) > 1:
         for k in validEcacheList:  # loop through valid Ecache values and find the one that maximizes delta E
             if k == i: continue  # don't calc for i, waste of time
@@ -115,7 +115,7 @@ def innerL(i, oS):
         return 0
 
 
-# full Platt SMO
+# full Platt SMO （核函数版本）
 def smoP(dataMatIn, classLabels, C, toler, maxIter, kTup=('lin', 0)):
     oS = optStruct(mat(dataMatIn), mat(classLabels).transpose(), C, toler, kTup)  #构建需要的结构体实例来容纳所有的数据
     iter = 0
@@ -129,7 +129,7 @@ def smoP(dataMatIn, classLabels, C, toler, maxIter, kTup=('lin', 0)):
                 print "fullSet, iter: %d i:%d, pairs changed %d" % (iter, i, alphaPairsChanged)
             iter += 1
         else:  # go over non-bound (railed) alphas
-            nonBoundIs = nonzero((oS.alphas.A > 0) * (oS.alphas.A < C))[0]
+            nonBoundIs = nonzero((oS.alphas.A > 0) * (oS.alphas.A < C))[0]  #寻找非边界值（不等于0与C）对应下标
             for i in nonBoundIs:
                 alphaPairsChanged += innerL(i, oS)
                 print "non-bound, iter: %d i:%d, pairs changed %d" % (iter, i, alphaPairsChanged)
@@ -165,7 +165,7 @@ def loadDataSet(fileName):
 #---test---
 dataArr, labelArr= loadDataSet('testSet.txt')
 b, alphas= smoP(dataArr, labelArr, 0.6, 0.001, 40)
-print 'alphas:\n', alphas[alphas>0]
+print 'alphas:\n', alphas[alphas>0]   #这里求的是alpha不为0的，即支持向量对应alpha
 print 'b:\n' , b
 
 ws=calcWs(alphas, dataArr, labelArr)
