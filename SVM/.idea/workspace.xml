@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="69889cb5-cb51-4873-b2d6-29d760280745" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/sklearn_SVM/14.4.ClassifierIndex.py" beforeDir="false" afterPath="$PROJECT_DIR$/sklearn_SVM/14.4.ClassifierIndex.py" afterDir="false" />
-    </list>
+    <list default="true" id="69889cb5-cb51-4873-b2d6-29d760280745" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,24 +19,24 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="data" value="1" />
-          <entry key="py" value="6" />
+          <entry key="py" value="9" />
           <entry key="txt" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="Python" value="6" />
+          <entry key="Python" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="483" />
+          <entry key="py" value="523" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="483" />
+          <entry key="Python" value="523" />
         </counts>
       </usages-collector>
     </session>
@@ -46,13 +44,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sklearn_SVM/14.5.unBalance.py">
+        <entry file="file://$PROJECT_DIR$/sklearn_SVM/14.6.HandWrittenDigits.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="33" column="67" selection-start-line="33" selection-start-column="67" selection-end-line="33" selection-end-column="67" />
-              <folding>
-                <element signature="e#42#60#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-176">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
             </state>
           </provider>
         </entry>
@@ -68,8 +63,8 @@
         <option value="$PROJECT_DIR$/sklearn_SVM/14.1.SVM_intro.py" />
         <option value="$PROJECT_DIR$/sklearn_SVM/14.2.decision_function.py" />
         <option value="$PROJECT_DIR$/sklearn_SVM/14.3.SVM_draw.py" />
-        <option value="$PROJECT_DIR$/sklearn_SVM/14.4.ClassifierIndex.py" />
         <option value="$PROJECT_DIR$/sklearn_SVM/14.5.unBalance.py" />
+        <option value="$PROJECT_DIR$/sklearn_SVM/14.4.ClassifierIndex.py" />
       </list>
     </option>
   </component>
@@ -125,28 +120,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.14.5.unBalance">
-    <configuration name="14.1.SVM_intro" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="SVM" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/sklearn_SVM" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sklearn_SVM/14.1.SVM_intro.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.14.6.HandWrittenDigits">
     <configuration name="14.2.decision_function" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="SVM" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -231,20 +205,41 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="14.6.HandWrittenDigits" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="SVM" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/sklearn_SVM" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sklearn_SVM/14.6.HandWrittenDigits.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="Python.14.1.SVM_intro" />
       <item itemvalue="Python.14.2.decision_function" />
       <item itemvalue="Python.14.3.SVM_draw (1)" />
       <item itemvalue="Python.14.4.ClassifierIndex" />
       <item itemvalue="Python.14.5.unBalance" />
+      <item itemvalue="Python.14.6.HandWrittenDigits" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.14.6.HandWrittenDigits" />
         <item itemvalue="Python.14.5.unBalance" />
         <item itemvalue="Python.14.4.ClassifierIndex" />
         <item itemvalue="Python.14.3.SVM_draw (1)" />
         <item itemvalue="Python.14.2.decision_function" />
-        <item itemvalue="Python.14.1.SVM_intro" />
       </list>
     </recent_temporary>
   </component>
@@ -338,23 +333,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sklearn_SVM/14.4.ClassifierIndex.py">
+    <entry file="file://$PROJECT_DIR$/sklearn_SVM/14.5.unBalance.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="308">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
           <folding>
             <element signature="e#42#60#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sklearn_SVM/14.5.unBalance.py">
+    <entry file="file://$PROJECT_DIR$/sklearn_SVM/14.4.ClassifierIndex.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="33" column="67" selection-start-line="33" selection-start-column="67" selection-end-line="33" selection-end-column="67" />
+        <state relative-caret-position="66">
+          <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
           <folding>
             <element signature="e#42#60#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sklearn_SVM/14.6.HandWrittenDigits.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-176">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
