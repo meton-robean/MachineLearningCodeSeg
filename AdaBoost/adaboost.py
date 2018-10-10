@@ -104,11 +104,11 @@ def adaClassify(datToClass, classifierArr):
     return sign(aggClassEst)  #预测结果
 
 
-def plotROC(predStrengths, classLabels):
+def plotROC(predStrengths, classLabels):  #绘制ROC曲线 predStrengths，classLabels都是行向量
     import matplotlib.pyplot as plt
     cur = (1.0,1.0) #cursor
     ySum = 0.0 #variable to calculate AUC
-    numPosClas = sum(array(classLabels)==1.0)
+    numPosClas = sum(array(classLabels)==1.0)   #正例数目
     yStep = 1/float(numPosClas); xStep = 1/float(len(classLabels)-numPosClas)
     sortedIndicies = predStrengths.argsort()#get sorted index, it's reverse
     fig = plt.figure()
@@ -122,8 +122,8 @@ def plotROC(predStrengths, classLabels):
             delX = xStep; delY = 0
             ySum += cur[1]
         #draw line from cur to (cur[0]-delX,cur[1]-delY)
-        ax.plot([cur[0],cur[0]-delX],[cur[1],cur[1]-delY], c='b')
-        cur = (cur[0]-delX,cur[1]-delY)
+        ax.plot( [ cur[0], cur[0]-delX ], [ cur[1], cur[1]-delY ],  c='b')
+        cur = (cur[0]-delX, cur[1]-delY)
     ax.plot([0,1],[0,1],'b--')
     plt.xlabel('False positive rate'); plt.ylabel('True positive rate')
     plt.title('ROC curve for AdaBoost horse colic detection system')
@@ -152,8 +152,13 @@ dataMat, classLabels=loadSimpData()
 
 #----test3---- #病马数据集训练与测试
 # datArr, labelArr=loadDataSet('horseColicTraining2.txt')
-# classifierArray=adaBoostTrainDS(datArr, labelArr, numIt=10)
+# classifierArray, aggClassEst2=adaBoostTrainDS(datArr, labelArr, numIt=10)
 # print classifierArray
 
 
 #---test4--- #
+datArr, labelArr=loadDataSet('horseColicTraining2.txt')
+classifierArray, aggClassEst3=adaBoostTrainDS(datArr, labelArr, numIt=10)
+print classifierArray
+print aggClassEst3.T
+plotROC(aggClassEst3.T, labelArr)
