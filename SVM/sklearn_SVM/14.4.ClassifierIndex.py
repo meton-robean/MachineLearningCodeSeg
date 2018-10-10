@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 #
 
-#分类评价指标 
+#分类评价指标
 
 import numpy as np
 from sklearn.metrics import accuracy_score
