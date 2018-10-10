@@ -1,9 +1,7 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
-#
 
-#分类评价指标
-
+#不同分类指标
 import numpy as np
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import precision_score, recall_score, f1_score, fbeta_score
